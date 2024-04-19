@@ -1,0 +1,4 @@
+crypto 1: ISPCTF{Just_for_fun_congratulation}
+crypto 2: ISPCTF{The_Correct_Answer_28376}
+crypto 3: ISPCTF{0r4c4lc4lc4lc4l_LSB_273449234}
+crypto 4: ISPCTF{Ohno$IL0v3Y0u$0Much}

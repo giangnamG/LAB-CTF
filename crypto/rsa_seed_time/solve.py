@@ -2,7 +2,8 @@ from pwn import remote
 import random, time
 from Crypto.Util.number import long_to_bytes, bytes_to_long, isPrime, inverse
 
-r = remote('127.0.0.1',7777)
+# r = remote('159.223.62.64',7777)
+r = remote('157.245.192.100',7777)
 random.seed(int(time.time()))
 
 data = r.recvuntil(b'Your choice:').decode('utf-8')

@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  myapp1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: noleak
+    ports:
+      - "8088:1773"

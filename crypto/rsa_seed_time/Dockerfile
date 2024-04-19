@@ -11,4 +11,4 @@ EXPOSE 7777
 CMD ["python", "server.py"]
 
 # docker build -t rsa_seed .
-# docker run --name=rsa_seed -d -p 7777:7777 rsa_seed
+# docker run --name=rsa_seed_welcome -d -p 7777:7777 rsa_seed

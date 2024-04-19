@@ -33,7 +33,7 @@ class RSA:
         |--------------------------------------------------------------|
         '''
     def encrypt(self, mess):
-        print("d: %s" %hex(self.d))
+        # print("d: %s" %hex(self.d))
         try:
             return hex(pow(bytes_to_long(mess.encode('utf-8')), self.e,self.p*self.q))
         except Exception as e:
@@ -117,8 +117,6 @@ class App:
                 new_user = User(conn, addr)
                 threading.Thread(target=new_user.session).start()
                 print(f"{addr} connected")
-            except KeyboardInterrupt:
-                break
             except Exception as e:
                 pass
 if __name__ == "__main__":

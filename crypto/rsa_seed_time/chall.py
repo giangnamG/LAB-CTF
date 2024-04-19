@@ -4,14 +4,14 @@ import random, time
 class RSA:
     def __init__(self):
         random.seed(int(time.time()))
-        self.p = self.getPrime(random.getrandbits(512))
-        self.q = self.getPrime(random.getrandbits(512))
-        assert isPrime(self.p) == True and isPrime(self.q) == True
-        self.n = self.p * self.q
-        self.phi = (self.p-1)*(self.q-1)
+        p = self.getPrime(random.getrandbits(512))
+        q = self.getPrime(random.getrandbits(512))
+        assert isPrime(p) == True and isPrime(q) == True
+        self.n = p * q
+        self.phi = (p-1)*(q-1)
         self.e = 65537
         self.d = inverse(self.e, self.phi)
-        self.flag = "ISPCTF{The_Correct_Answer_28376}"
+        self.flag = "ISPCTF{}"
         self.enc_flag = hex(pow(bytes_to_long(self.flag.encode('utf-8')), self.e, self.n))
     
     def getPrime(self, num):
@@ -33,7 +33,6 @@ class RSA:
         '''
         
     def encrypt(self, mess):
-        print("d: %s" %hex(pow(self.e,-1,self.phi)))
         return hex(pow(bytes_to_long(mess.encode('utf-8')), self.e,self.p*self.q))
 
     def decrypt(self, isGetFlag, enc, key):
@@ -46,6 +45,7 @@ class RSA:
             return mess
         except Exception as e:
             return "Invalid Key"
+        
     def process(self):
         print(self.title())
         while True:
